@@ -42,7 +42,7 @@ window.onload = function () {
       },
       x: {
         label: {
-          text: "Number of books",
+          text: "Number of characters",
           position: "outer-center"
         }
       }

@@ -179,6 +179,14 @@ var Ukkonen = {
 
     //TODO: Change edge name to node and edge name
     node.name = this.text.substring(node.reference.start - 1, node.reference.end)
+  },
+
+  /**
+   * Longest repeated substring
+   */
+  findHeight: function () {
+    if (node == null) return 0;
+    return 1 + max(findHeight(node.left), findHeight(node.right));
   }
 };
 
