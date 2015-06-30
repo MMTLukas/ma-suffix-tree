@@ -18,7 +18,7 @@ async.eachSeries(
   function (filename, cb) {
     fs.readFile(filename, function (err, data) {
       console.log("Read file ", filename);
-      
+
       if (!err) {
         books.push(data);
       }
@@ -27,8 +27,8 @@ async.eachSeries(
       cb(err);
     });
   },
-  function(err) {
-    startMeasurment();
+  function (err) {
+    startMeasurement();
   }
 );
 
@@ -36,29 +36,30 @@ async.eachSeries(
  * MEASURMENT
  */
 
-var startMeasurment = function () {
-  var measurmentsAllSizes = [];
+var startMeasurement = function () {
+  var measurementsAllSizes = [];
   for (var i = 0; i < 5; i++) {
 
-    console.log("Build tree with the first ", i+1, " books...");
-    var measurmentOneSize = [];
-    var text = books.slice(0, i+1).join("Ã–")
+    console.log("Build tree with the first ", i + 1, " books...");
+    var measurementOneSize = [];
+    var text = books.slice(0, i + 1).join("Ä");
 
+    console.log("With text length ", text.length);
     for (var j = 0; j < 5; j++) {
       console.log("Measurment number ", j, "...")
       var timeStart = process.hrtime();
 
-      Ukkonen.buildSuffixTree(text).print();
+      Ukkonen.buildSuffixTree(text);
 
       var duration = process.hrtime(timeStart);
       var durationNanoSeconds = duration[0] * Math.pow(10, 9) + duration[1];
-      measurmentOneSize.push(durationNanoSeconds);
+      measurementOneSize.push(durationNanoSeconds);
     }
 
-    var average = Math.ceil(Math.average(measurmentOneSize));
-    measurmentsAllSizes.push(average);
+    var average = Math.ceil(Math.average(measurementOneSize));
+    measurementsAllSizes.push(average);
   }
-  console.log(measurmentsAllSizes)
+  console.log(measurementsAllSizes)
 };
 
 Math.average = function (array) {

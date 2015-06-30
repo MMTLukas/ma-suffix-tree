@@ -20,7 +20,6 @@ var Ukkonen = {
 
     for (var i = 2; i <= text.length; i++) {
       object = this.update(object.s, object.k, i - 1, i);
-      this.updateLeafs(this.tree.root);
     }
 
     return this.tree;
@@ -157,7 +156,8 @@ var Ukkonen = {
 
     return idx;
 
-  },// Return the length of a substring from k to and inclusive p
+  },
+  // Return the length of a substring from k to and inclusive p
   lengthOfTwoIdx: function (kInclusive, pInclusive) {
     return this.text.substring(kInclusive - 1, pInclusive).length;
   },
