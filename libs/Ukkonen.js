@@ -26,8 +26,6 @@ var Ukkonen = {
     return this.tree;
   },
   update: function (s, k, p, i) {
-    console.log("update", s.name, k, p, i);
-
     var oldR = this.tree.root;
     var canonizeResult = this.canonize(s, k, p);
     var testResult = this.testAndSplit(canonizeResult.s, canonizeResult.k, p, this.text[i - 1]);
@@ -55,7 +53,6 @@ var Ukkonen = {
     }
   },
   canonize: function (s, k, p) {
-    console.log("canonize", s.name, k, p);
     var idx, node, edge;
 
     while (p - k + 1 > 0) {
@@ -80,8 +77,6 @@ var Ukkonen = {
     }
   },
   testAndSplit: function (s, k, p, x) {
-    console.log("testandsplit", s.name, k, p, x);
-
     if (k > p) {
       if (this.findNodeIdxWithChar(s, x) >= 0) {
         return {
