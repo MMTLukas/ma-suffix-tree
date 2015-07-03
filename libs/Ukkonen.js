@@ -22,7 +22,7 @@ var Ukkonen = {
       object = this.update(object.s, object.k, i - 1, i);
     }
 
-    this.updateNodeNames(this.tree.root);
+    //this.updateNodeNames(this.tree.root);
 
     return this.tree;
   },

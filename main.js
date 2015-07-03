@@ -13,11 +13,13 @@ var Ukkonen = require('./libs/Ukkonen');
  */
 
 var books = [];
+console.log("Read books...")
+
 async.eachSeries(
-  ['books/pg108.txt'/*, 'books/pg244.txt', 'books/pg1661.txt', 'books/pg2097.txt', 'books/pg2852.txt'*/],
+  ['books/pg108.txt', 'books/pg244.txt', 'books/pg1661.txt', 'books/pg2097.txt', 'books/pg2852.txt'],
   function (filename, cb) {
     fs.readFile(filename, function (err, data) {
-      console.log("Read file ", filename);
+      console.log("\tRead file ", filename);
 
       if (!err) {
         books.push(data);
@@ -38,20 +40,17 @@ async.eachSeries(
 
 var startMeasurement = function () {
   var measurementsAllSizes = [];
-  for (var i = 0; i < 1; i++) {
-
+  for (var i = 0; i < 5; i++) {
     console.log("Build tree with the first ", i + 1, " books...");
 
     var measurementOneSize = [];
-    //var text = books.slice(0, i + 1).join("§").substring(0,20000);
-    var text = "aaa bb c 2 c bb aaa";
+    var text = books.slice(0, i + 1).join("§");
     var tree;
 
+    console.log("\tWith text length ", text.length, "\n\tMeasurment...");
+    for (var j = 0; j < 5; j++) {
+      console.log("\t\tMeasurment number ", j, "...");
 
-    console.log("With text length ", text.length);
-
-    for (var j = 0; j < 1; j++) {
-      console.log("Measurment number ", j, "...")
       var timeStart = process.hrtime();
 
       tree = Ukkonen.buildSuffixTree(text);
@@ -59,18 +58,20 @@ var startMeasurement = function () {
       var duration = process.hrtime(timeStart);
       var durationNanoSeconds = duration[0] * Math.pow(10, 9) + duration[1];
       measurementOneSize.push(durationNanoSeconds);
+
+      console.log("\t\t\tDuration ", durationNanoSeconds);
     }
 
     var average = Math.ceil(Math.average(measurementOneSize));
     measurementsAllSizes.push(average);
+    console.log("\tMean Duration", average);
 
-    tree.writeToFile();
-
-    console.log("Find longest repeated substrings...");
+    console.log("\tFind longest repeated substrings...");
     var subStrings = tree.findLongestRepeatedSubstrings(3);
-    writeSubstringsToTextFiles(subStrings, i);
+    //console.log("top substrings", subStrings);
+    writeSubStringsToTextFiles(subStrings, i);
   }
-  console.log("Duration in nano seconds: ", measurementsAllSizes);
+  console.log("\tAll Duration", measurementsAllSizes);
 };
 
 Math.average = function (array) {
@@ -84,7 +85,7 @@ Math.average = function (array) {
 /**
  * Write results to file
  */
-var writeSubstringsToTextFiles = function(subStrings, n){
+var writeSubStringsToTextFiles = function(subStrings, n){
   for(var i = 0; i<subStrings.length; i++){
     var idx = i;
     fs.writeFile("substrings/substring_books_" + (n+1) + "_with_" + (idx+1) + "_longest.txt", subStrings[idx], function(err) {
