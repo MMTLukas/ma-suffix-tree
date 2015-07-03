@@ -48,7 +48,7 @@ var startMeasurement = function () {
     var tree;
 
     console.log("\tWith text length ", text.length, "\n\tMeasurment...");
-    for (var j = 0; j < 5; j++) {
+    for (var j = 0; j < 1; j++) {
       console.log("\t\tMeasurment number ", j, "...");
 
       var timeStart = process.hrtime();
