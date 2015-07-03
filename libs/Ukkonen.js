@@ -5,7 +5,7 @@ var Ukkonen = {
   tree: undefined,
   text: undefined,
   buildSuffixTree: function (text) {
-    this.tree = new Tree();
+    this.tree = new Tree(text);
     this.text = text;
 
     if (text.length < 1) {
@@ -21,6 +21,8 @@ var Ukkonen = {
     for (var i = 2; i <= text.length; i++) {
       object = this.update(object.s, object.k, i - 1, i);
     }
+
+    this.updateNodeNames(this.tree.root);
 
     return this.tree;
   },
@@ -168,9 +170,9 @@ var Ukkonen = {
 
     return this.text.substring(node.reference.start - 1, node.reference.end);
   },
-  updateLeafs: function (node) {
+  updateNodeNames: function (node) {
     for (var i = 0; i < node.children.length; i++) {
-      this.updateLeafs(node.children[i]);
+      this.updateNodeNames(node.children[i]);
     }
 
     if (node.name === "root") {

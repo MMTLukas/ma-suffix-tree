@@ -1,0 +1,228 @@
+{
+  "virtualRoot": {
+    "reference": {
+      "end": null
+    },
+    "name": "virtualRoot",
+    "children": [
+      {
+        "reference": {
+          "start": "SIGMA",
+          "end": null
+        },
+        "name": "root",
+        "children": [
+          {
+            "reference": {
+              "start": 1,
+              "end": 1
+            },
+            "name": "a",
+            "children": [
+              {
+                "reference": {
+                  "start": 2,
+                  "end": 2
+                },
+                "name": "a",
+                "children": [
+                  {
+                    "reference": {
+                      "start": 3,
+                      "end": null
+                    },
+                    "name": "a bb c 2 c bb aaa",
+                    "children": []
+                  },
+                  {
+                    "reference": {
+                      "start": 4,
+                      "end": null
+                    },
+                    "name": " bb c 2 c bb aaa",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "reference": {
+                  "start": 4,
+                  "end": null
+                },
+                "name": " bb c 2 c bb aaa",
+                "children": []
+              }
+            ]
+          },
+          {
+            "reference": {
+              "start": 4,
+              "end": 4
+            },
+            "name": " ",
+            "children": [
+              {
+                "reference": {
+                  "start": 5,
+                  "end": 7
+                },
+                "name": "bb ",
+                "children": [
+                  {
+                    "reference": {
+                      "start": 8,
+                      "end": null
+                    },
+                    "name": "c 2 c bb aaa",
+                    "children": []
+                  },
+                  {
+                    "reference": {
+                      "start": 17,
+                      "end": null
+                    },
+                    "name": "aaa",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "reference": {
+                  "start": 8,
+                  "end": 9
+                },
+                "name": "c ",
+                "children": [
+                  {
+                    "reference": {
+                      "start": 10,
+                      "end": null
+                    },
+                    "name": "2 c bb aaa",
+                    "children": []
+                  },
+                  {
+                    "reference": {
+                      "start": 14,
+                      "end": null
+                    },
+                    "name": "bb aaa",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "reference": {
+                  "start": 10,
+                  "end": null
+                },
+                "name": "2 c bb aaa",
+                "children": []
+              },
+              {
+                "reference": {
+                  "start": 17,
+                  "end": null
+                },
+                "name": "aaa",
+                "children": []
+              }
+            ]
+          },
+          {
+            "reference": {
+              "start": 5,
+              "end": 5
+            },
+            "name": "b",
+            "children": [
+              {
+                "reference": {
+                  "start": 6,
+                  "end": 7
+                },
+                "name": "b ",
+                "children": [
+                  {
+                    "reference": {
+                      "start": 8,
+                      "end": null
+                    },
+                    "name": "c 2 c bb aaa",
+                    "children": []
+                  },
+                  {
+                    "reference": {
+                      "start": 17,
+                      "end": null
+                    },
+                    "name": "aaa",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "reference": {
+                  "start": 7,
+                  "end": 7
+                },
+                "name": " ",
+                "children": [
+                  {
+                    "reference": {
+                      "start": 8,
+                      "end": null
+                    },
+                    "name": "c 2 c bb aaa",
+                    "children": []
+                  },
+                  {
+                    "reference": {
+                      "start": 17,
+                      "end": null
+                    },
+                    "name": "aaa",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "reference": {
+              "start": 8,
+              "end": 9
+            },
+            "name": "c ",
+            "children": [
+              {
+                "reference": {
+                  "start": 10,
+                  "end": null
+                },
+                "name": "2 c bb aaa",
+                "children": []
+              },
+              {
+                "reference": {
+                  "start": 14,
+                  "end": null
+                },
+                "name": "bb aaa",
+                "children": []
+              }
+            ]
+          },
+          {
+            "reference": {
+              "start": 10,
+              "end": null
+            },
+            "name": "2 c bb aaa",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}
